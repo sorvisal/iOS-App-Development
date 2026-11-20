@@ -1,0 +1,12 @@
+@"
+/projectTest/node_modules/
+/projectTest/.angular/
+/projectTest/www/
+/projectTest/dist/
+/projectTest/.ionic/
+/projectTest/coverage/
+/projectTest/test-results/
+/projectTest/playwright-report/
+/projectTest/blob-report/
+/projectTest/.vscode/
+"@ | Set-Content .gitignore
