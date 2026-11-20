@@ -1,21 +1,120 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Blank </ion-title>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Student Information</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
-  </div>
+  <!-- Profile Card -->
+  <ion-card class="profile-card">
+
+    <div class="avatar">
+      <img src="../../assets/icon/visal_sor.png" alt="">
+    </div>
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ fullName }}
+      </ion-card-title>
+
+      <p class="student-id">
+        {{ student.id }}
+      </p>
+
+      <ion-badge color="success">
+        {{ studentStatus }}
+      </ion-badge>
+    </ion-card-header>
+
+  </ion-card>
+
+  <!-- Personal Information -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Personal Information
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div class="info-row">
+        <span>Full Name</span>
+        <strong>{{ fullName }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Age</span>
+        <strong>{{ student.age }} years</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Gender</span>
+        <strong>{{ student.gender }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Email</span>
+        <strong>{{ student.email }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Phone</span>
+        <strong>{{ student.phone }}</strong>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Education -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Education
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div class="info-row">
+        <span>University</span>
+        <strong>{{ student.university }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Major</span>
+        <strong>{{ student.major }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Academic Year</span>
+        <strong>Year {{ student.year }}</strong>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Skills -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Technical Skills
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div class="skills-container">
+        @for (skill of skills; track skill) {
+          <ion-badge color="primary">
+            {{ skill }}
+          </ion-badge>
+        }
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
